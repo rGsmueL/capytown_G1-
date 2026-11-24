@@ -1,0 +1,79 @@
+RC-1 · Registro del simulador ROS 2 Humble
+Primer bloque conservado de SIMULACION/sim_log.txt.
+
+=== TOPIC LIST ===
+/beep
+/camera/camera_info
+/camera/image_raw
+/cmd_vel
+/goal_pose
+/imu/data_raw
+/initialpose
+/joint_states
+/map
+/map_updates
+/odom
+/parameter_events
+/race/hud
+/race/hud_array
+/race/track_markers
+/robot_description
+/rosout
+/scan
+/sim/collision
+/sim/pose
+/tf
+/tf_static
+/vel_raw
+/voltage
+
+=== TOPIC HZ /ODOM (10s) ===
+average rate: 50.008
+	min: 0.012s max: 0.025s std dev: 0.00233s window: 52
+average rate: 50.002
+	min: 0.012s max: 0.025s std dev: 0.00227s window: 103
+average rate: 49.996
+	min: 0.012s max: 0.026s std dev: 0.00231s window: 154
+average rate: 50.000
+	min: 0.012s max: 0.026s std dev: 0.00228s window: 205
+average rate: 49.999
+	min: 0.012s max: 0.026s std dev: 0.00227s window: 255
+average rate: 49.957
+	min: 0.012s max: 0.026s std dev: 0.00230s window: 306
+average rate: 49.973
+	min: 0.012s max: 0.026s std dev: 0.00228s window: 357
+average rate: 49.974
+	min: 0.012s max: 0.026s std dev: 0.00227s window: 407
+
+=== SIM POSE ===
+header:
+  stamp:
+    sec: 1794439512
+    nanosec: 518003459
+  frame_id: map
+pose:
+  position:
+    x: 1.2104690523937096
+    y: 1.0767457957909803
+    z: 0.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.7455157069699422
+    w: -0.666488057403212
+---
+
+=== RECORRIDO MANUAL · NOISE HIGH ===
+Fuente: PREUBAS/evidencias_rc1_AD/csv/A/A_manual_high_run1_cierre.csv
+Arena arena_rc1 · Inicio (1.0,1.0,0.0) · radio 0.14 m.
+Cierre según /odom: 36.51 cm.
+Cierre según /sim/pose: 8.05 cm.
+Serie sincronizada: csv/sim_a_cierre.csv
+Gráfica: plots/sim_a_cierre.png
+Captura rqt_graph: rqt_graph.png (copia del registro SIMULACION/GRAFO.png).
+
+=== PRUEBA DE FRENADO DEL SIMULADOR ===
+ROS 2 Humble, arena_rc1, comprobación separada con noise:=none y dominio local aislado 88.
+Se publicó linear.x=0.15 m/s y se dejaron de enviar mensajes sin publicar un cero.
+Desde el último comando: caída de velocidad a los 0.529 s; /odom por debajo de 0.01 m/s a los 0.569 s.
+El temporizador está configurado en 0.5 s; la velocidad baja con el límite de aceleración.

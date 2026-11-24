@@ -1,0 +1,36 @@
+# Perfiles finales del cuadrado; el bloque robot_real es sintético.
+# Extraer el bloque de planta antes de usar --params-file.
+simulador:
+  /cuadrado_controller:
+    ros__parameters:
+      controlador: pid
+      side: 2.0
+      linear_speed: 0.2
+      max_angular: 2.0
+      integral_limit: 0.5
+      odom_topic: /odom
+      control_rate: 30.0
+      kp: 3.0
+      ki: 0.3
+      kd: 2.0
+      kp_yaw: 10.0
+      ki_yaw: 0.1
+      kd_yaw: 1.2
+      bias_w: 0.05
+robot_real:
+  /cuadrado_controller:
+    ros__parameters:
+      controlador: pid
+      side: 2.0
+      linear_speed: 0.16
+      max_angular: 1.0
+      integral_limit: 0.5
+      odom_topic: /odom
+      control_rate: 30.0
+      kp: 3.0
+      ki: 0.3
+      kd: 2.0
+      kp_yaw: 5.0
+      ki_yaw: 0.1
+      kd_yaw: 1.2
+      bias_w: 0.0
